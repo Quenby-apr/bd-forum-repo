@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using bdForumBusinessLogic.BindingModels;
 using bdForumBusinessLogic.BusinessLogic;
+using bdForumDBImplement.DatabaseContext;
 using Unity;
 
 namespace bdForum
@@ -18,6 +19,7 @@ namespace bdForum
         [Dependency]
         public new IUnityContainer Container { get; set; }
         private readonly TopicLogic topiclogic;
+        public MongoDB_ mongo = new MongoDB_();
         public FormMain(TopicLogic topiclogic)
         {
             InitializeComponent();
@@ -121,6 +123,18 @@ namespace bdForum
             {
                 LoadData();
             }
+            var data1 = DateTime.Now;
+            for (int i=0; i<20000;i++)
+            {
+                topiclogic.CreateOrUpdate(new TopicBindingModel {
+                    Name = "тема для проверки номер " + i,
+                    NumberOfMessages=0,
+                    NumberOfVisitors=0
+                });
+            }
+            var data2 = DateTime.Now;
+            var result = data2.Millisecond - data1.Millisecond;
+            Console.WriteLine(result);
         }
 
         private void buttonReq3_Click(object sender, EventArgs e)
@@ -130,6 +144,12 @@ namespace bdForum
             {
                 LoadData();
             }
+        }
+
+        private void buttontrans_Click(object sender, EventArgs e)
+        {
+            mongo.Create();
+            MessageBox.Show("Перенос данных начат", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

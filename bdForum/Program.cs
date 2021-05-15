@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using bdForumBusinessLogic.BusinessLogic;
 using bdForumBusinessLogic.Interfaces;
 using bdForumBusinessLogic.ViewModels;
+using bdForumDBImplement.DatabaseContext;
 using bdForumDBImplement.Implements;
 using Unity;
 using Unity.Lifetime;

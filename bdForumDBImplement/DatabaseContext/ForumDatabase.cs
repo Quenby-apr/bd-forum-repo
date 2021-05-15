@@ -10,12 +10,6 @@ namespace bdForumDBImplement.DatabaseContext
         public ForumDatabase()
         {
         }
-
-        public ForumDatabase(DbContextOptions<ForumDatabase> options)
-            : base(options)
-        {
-        }
-
         public virtual DbSet<Like> Like { get; set; }
         public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<Moderator> Moderator { get; set; }

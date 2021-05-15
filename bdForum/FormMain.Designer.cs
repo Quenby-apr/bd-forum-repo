@@ -36,6 +36,7 @@
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonReq1 = new System.Windows.Forms.Button();
             this.buttonReq3 = new System.Windows.Forms.Button();
+            this.buttontrans = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             // 
             // buttonReq1
             // 
-            this.buttonReq1.Location = new System.Drawing.Point(698, 334);
+            this.buttonReq1.Location = new System.Drawing.Point(698, 320);
             this.buttonReq1.Name = "buttonReq1";
             this.buttonReq1.Size = new System.Drawing.Size(75, 23);
             this.buttonReq1.TabIndex = 6;
@@ -110,7 +111,7 @@
             // 
             // buttonReq3
             // 
-            this.buttonReq3.Location = new System.Drawing.Point(698, 387);
+            this.buttonReq3.Location = new System.Drawing.Point(698, 349);
             this.buttonReq3.Name = "buttonReq3";
             this.buttonReq3.Size = new System.Drawing.Size(75, 23);
             this.buttonReq3.TabIndex = 7;
@@ -118,11 +119,22 @@
             this.buttonReq3.UseVisualStyleBackColor = true;
             this.buttonReq3.Click += new System.EventHandler(this.buttonReq3_Click);
             // 
+            // buttontrans
+            // 
+            this.buttontrans.Location = new System.Drawing.Point(698, 393);
+            this.buttontrans.Name = "buttontrans";
+            this.buttontrans.Size = new System.Drawing.Size(75, 45);
+            this.buttontrans.TabIndex = 8;
+            this.buttontrans.Text = "Перенос данных";
+            this.buttontrans.UseVisualStyleBackColor = true;
+            this.buttontrans.Click += new System.EventHandler(this.buttontrans_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 450);
+            this.Controls.Add(this.buttontrans);
             this.Controls.Add(this.buttonReq3);
             this.Controls.Add(this.buttonReq1);
             this.Controls.Add(this.buttonRefresh);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonReq1;
         private System.Windows.Forms.Button buttonReq3;
+        private System.Windows.Forms.Button buttontrans;
     }
 }
