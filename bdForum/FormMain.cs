@@ -19,11 +19,14 @@ namespace bdForum
         [Dependency]
         public new IUnityContainer Container { get; set; }
         private readonly TopicLogic topiclogic;
+        private readonly MessageLogic messagelogic;
         public MongoDB_ mongo = new MongoDB_();
-        public FormMain(TopicLogic topiclogic)
+        public MyRedisDB redis = new MyRedisDB();
+        public FormMain(TopicLogic topiclogic, MessageLogic messagelogic)
         {
             InitializeComponent();
             this.topiclogic = topiclogic;
+            this.messagelogic = messagelogic;
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -150,6 +153,24 @@ namespace bdForum
         {
             mongo.Create();
             MessageBox.Show("Перенос данных начат", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buttonreq_Click(object sender, EventArgs e)
+        {
+            redis.getdata();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<int> mylist = new List<int>();
+            var time1 = DateTime.Now;
+            var list = topiclogic.Read(null);
+            foreach (var rec in list)
+            {
+                mylist.Add(1);
+            }
+            var time2 = DateTime.Now;
+            Console.WriteLine(time2 - time1);
         }
     }
 }

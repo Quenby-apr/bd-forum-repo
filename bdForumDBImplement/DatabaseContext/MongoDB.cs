@@ -42,6 +42,7 @@ namespace bdForumDBImplement.DatabaseContext
             public ObjectId _id { get; set; }
             public string login { get; set; }
             public string password { get; set; }
+            public string email { get; set; }
             public int totaltime { get; set; }
             public string role { get; set; }
             public string status { get; set; }
@@ -168,6 +169,7 @@ namespace bdForumDBImplement.DatabaseContext
                 var user = new User();
                 user.login = visitor.LoginUser;
                 user.password = visitor.Password;
+                user.email = visitor.Email;
                 user.role = "visitor";
                 user.status = visitor.Status;
                 user.totaltime = visitor.TotalTime;
@@ -181,6 +183,7 @@ namespace bdForumDBImplement.DatabaseContext
                 var user = new User();
                 user.login = moderator.LoginUser;
                 user.password = moderator.Password;
+                user.email = moderator.Email;
                 user.role = "moderator";
                 user.totaltime = moderator.TotalTime;
                 user.amountofhelp = moderator.AmountOfHelp;

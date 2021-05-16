@@ -37,8 +37,9 @@ namespace bdForum
         {
             try
             {
-                Program.myTimer = DateTime.Now;
+                var time1 = DateTime.Now;
                 var list = messagelogic.Read(new MessageBindingModel {NameTopic = nameTopic});
+                var time2 = DateTime.Now;
                 if (list != null)
                 {
                     dataGridView.DataSource = list;
@@ -48,7 +49,7 @@ namespace bdForum
                     dataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                     dataGridView.Columns[4].Visible = true;
                 }
-                var answer = Program.myTimer - DateTime.Now;
+                var answer = time1 - time2;
                 Console.WriteLine("Время выполнения: " + answer);
             }
             catch (Exception ex)

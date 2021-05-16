@@ -37,6 +37,8 @@
             this.buttonReq1 = new System.Windows.Forms.Button();
             this.buttonReq3 = new System.Windows.Forms.Button();
             this.buttontrans = new System.Windows.Forms.Button();
+            this.buttonreq = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,11 +131,33 @@
             this.buttontrans.UseVisualStyleBackColor = true;
             this.buttontrans.Click += new System.EventHandler(this.buttontrans_Click);
             // 
+            // buttonreq
+            // 
+            this.buttonreq.Location = new System.Drawing.Point(808, 349);
+            this.buttonreq.Name = "buttonreq";
+            this.buttonreq.Size = new System.Drawing.Size(75, 89);
+            this.buttonreq.TabIndex = 9;
+            this.buttonreq.Text = "редис";
+            this.buttonreq.UseVisualStyleBackColor = true;
+            this.buttonreq.Click += new System.EventHandler(this.buttonreq_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(808, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 68);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "постгрес";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 450);
+            this.ClientSize = new System.Drawing.Size(917, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonreq);
             this.Controls.Add(this.buttontrans);
             this.Controls.Add(this.buttonReq3);
             this.Controls.Add(this.buttonReq1);
@@ -162,5 +186,7 @@
         private System.Windows.Forms.Button buttonReq1;
         private System.Windows.Forms.Button buttonReq3;
         private System.Windows.Forms.Button buttontrans;
+        private System.Windows.Forms.Button buttonreq;
+        private System.Windows.Forms.Button button1;
     }
 }
